@@ -71,11 +71,20 @@ class FigcaptionProcessor(BlockProcessor):
         no_indent = self.NO_INDENT_RE.match(block)
 
         if no_indent:
-            caption, theRest = (block, None)
+            caption = block
         else:
-            caption, theRest = self.detab(block)
+            caption, rest = self.detab(block)
+            print 'first', caption
+            while True:
+                nextBlock = blocks.pop(0)
+                if self.NO_INDENT_RE.match(nextBlock):
+                    blocks.insert(0, nextBlock)
+                    break
+                else:
+                    part, rest = self.detab(nextBlock)
+                    caption += '</p><p>' + part
         if caption:
-            caption = '%s\n%s' % (m.group('caption'), caption)
+            caption = '%s%s' % (m.group('caption'), caption)
         else:
             caption = m.group('caption')
 
@@ -88,9 +97,6 @@ class FigcaptionProcessor(BlockProcessor):
         figcaption = etree.SubElement(figure, 'figcaption')
         self.parser.parseBlocks(figcaption, [caption])
         self.parser.state.reset()
-
-        if theRest:
-            blocks.insert(0, theRest)
 
 
 class FigcaptionExtension(Extension):
