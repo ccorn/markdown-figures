@@ -81,9 +81,9 @@ class FigcaptionProcessor(BlockProcessor):
                     break
                 else:
                     part, rest = self.detab(nextBlock)
-                    caption += '</p><p>' + part
+                    caption += '\n\n' + part
         if caption:
-            caption = '%s %s' % (m.group('caption'), caption)
+            caption = '%s\n%s' % (m.group('caption'), caption)
         else:
             caption = m.group('caption')
 
@@ -94,7 +94,8 @@ class FigcaptionProcessor(BlockProcessor):
         # Add definition
         self.parser.state.set('fig')
         figcaption = etree.SubElement(figure, 'figcaption')
-        self.parser.parseBlocks(figcaption, [caption])
+        print 'CAPTION:', caption
+        self.parser.parseChunk(figcaption, caption)
         self.parser.state.reset()
 
 
