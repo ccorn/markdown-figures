@@ -83,7 +83,7 @@ class FigcaptionProcessor(BlockProcessor):
                     part, rest = self.detab(nextBlock)
                     caption += '</p><p>' + part
         if caption:
-            caption = '%s%s' % (m.group('caption'), caption)
+            caption = '%s %s' % (m.group('caption'), caption)
         else:
             caption = m.group('caption')
 
