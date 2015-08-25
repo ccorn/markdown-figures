@@ -74,7 +74,6 @@ class FigcaptionProcessor(BlockProcessor):
             caption = block
         else:
             caption, rest = self.detab(block)
-            print 'first', caption
             while True:
                 nextBlock = blocks.pop(0)
                 if self.NO_INDENT_RE.match(nextBlock):
