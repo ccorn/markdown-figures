@@ -94,7 +94,6 @@ class FigcaptionProcessor(BlockProcessor):
         # Add definition
         self.parser.state.set('fig')
         figcaption = etree.SubElement(figure, 'figcaption')
-        print 'CAPTION:', caption
         self.parser.parseChunk(figcaption, caption)
         self.parser.state.reset()
 
