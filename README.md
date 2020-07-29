@@ -6,7 +6,7 @@ to make captioned figures out of images that are followed by a description.
 In contrast to other extensions with that purpose, this one
 
   * does not introduce new syntax tokens,
-  * does not change the block/inline category of the image,
+  * does not change the block/inline category of the `![]` element
   * does not repurpose existing image attributes like `alt` or `title`,
   * allows use of Markdown in the caption,
   * is most natural to write, thus fitting the Markdown spirit very well.
