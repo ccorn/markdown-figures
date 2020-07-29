@@ -11,6 +11,9 @@ In contrast to other extensions with that purpose, this one
   * allows use of Markdown in the caption,
   * is most natural to write, thus fitting the Markdown spirit very well.
 
+Forked from [lehni] who forked from [helderco].
+Added a cherry-pick from the fork by [gijsdeheij].
+
 ## A simple example
 
     ![](http://lorempixel.com/350/150/)
@@ -47,4 +50,6 @@ markdown_extensions:
 ```
 
 [Python-Markdown]: https://pypi.org/project/Markdown/
-
+[helderco]: https://github.com/helderco/markdown-figures
+[lehni]: https://github.com/lehni/markdown-figures
+[gijsdeheij]: https://github.com/gijsdeheij/markdown-figures/commit/83318e69543ca3176de4b64ec2a5e2c6a91b73b8
