@@ -1,7 +1,15 @@
-markdown-captions
-=================
+# Python module `mdx_figures`
 
-Extension for [Python-Markdown][] to parse images with captions inside a figure element.
+This is the extension `mdx_figures` for [Python-Markdown]
+to make captioned figures out of images that are followed by a description.
+
+In contrast to other extensions with that purpose, this one
+
+  * does not introduce new syntax tokens,
+  * does not change the block/inline category of the image,
+  * does not repurpose existing image attributes like `alt` or `title`,
+  * allows use of Markdown in the caption,
+  * is most natural to write, thus fitting the Markdown spirit very well.
 
 ## A simple example
 
@@ -31,9 +39,12 @@ Clone and run
 sudo python setup.py install
 ```
 
-For mkdocs add this to your mkdocs.yml file:
+For `mkdocs` add this to your `mkdocs.yml` file:
 
 ```yaml
 markdown_extensions:
     - mdx_figures
 ```
+
+[Python-Markdown]: https://pypi.org/project/Markdown/
+
