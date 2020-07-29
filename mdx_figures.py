@@ -110,5 +110,5 @@ class FigcaptionExtension(Extension):
                                       '<ulist')
 
 
-def makeExtension(configs={}):
-    return FigcaptionExtension(configs=configs)
+def makeExtension(**kwargs):
+    return FigcaptionExtension(**kwargs)
